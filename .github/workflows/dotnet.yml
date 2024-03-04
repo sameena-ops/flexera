@@ -28,10 +28,10 @@ jobs:
       run: dotnet build --no-restore
     - name: Test
       working-directory: ./flexera.automation.selenium
-      run: dotnet test --no-build --verbosity normal --logger html 
+      run: dotnet test --logger html 
     - name: Publish Test Results
       uses: actions/upload-artifact@v2
       with:
         name: test-results
-        path: './flexera.automation.selenium/TestResults/TestResults_*.html'
+        path: './flexera.automation.selenium/TestResults/*.html'
     
