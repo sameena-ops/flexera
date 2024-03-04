@@ -33,5 +33,5 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: test-results
-        path: '**/flexera.automation.selenium/TestResults/TestResults_*.html'
+        path: './flexera.automation.selenium/TestResults/TestResults_*.html'
     
