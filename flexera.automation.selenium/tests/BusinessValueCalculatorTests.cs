@@ -1,11 +1,10 @@
 ﻿using System.Collections.ObjectModel;
 using Flexera.Automation.Selenium.tests;
-using Flexera.Automation.Selenium.tests.pageActions;
+using flexera.automation.selenium.tests.helpers;
 using Flexera.Automation.Selenium.tests.utilities;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using Xunit;
-using Xunit.Abstractions;
 
 namespace flexera.automation.selenium;
 
@@ -95,7 +94,7 @@ public class BusinessValueCalculatorTests: BaseTest,IClassFixture<BrowserFactory
     
     [Fact]
     public Task Verify_InteractiveCharts_Available()
-    {
+    { 
         _businessValueCalculatorPageHelper.SwitchToRoiFrame(Driver);
        IWebElement charts = Driver.FindElement(By.XPath("//*[@id=\"app_interactive_chart2\"]"));
        Assert.True(charts.Displayed); 

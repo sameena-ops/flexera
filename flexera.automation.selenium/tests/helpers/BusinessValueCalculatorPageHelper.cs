@@ -2,7 +2,7 @@
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 
-namespace Flexera.Automation.Selenium.tests.pageActions;
+namespace flexera.automation.selenium.tests.helpers;
 
 public class BusinessValueCalculatorPageHelper
 {
