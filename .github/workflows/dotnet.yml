@@ -21,17 +21,17 @@ jobs:
       with:
         dotnet-version: 8.0.x
     - name: Restore dependencies
-      working-directory: ./flexera-automation/flexera.automation.selenium
+      working-directory: ./flexera.automation.selenium
       run: dotnet restore
     - name: Build
-      working-directory: ./flexera-automation/flexera.automation.selenium
+      working-directory: ./flexera.automation.selenium
       run: dotnet build --no-restore
     - name: Test
-      working-directory: ./flexera-automation/flexera.automation.selenium
+      working-directory: ./flexera.automation.selenium
       run: dotnet test --no-build --verbosity normal --logger "trx;LogFileName=test-results.xml"
     - name: Publish Test Results
       uses: actions/upload-artifact@v2
       with:
         name: test-results
-        path: '**/flexera-automation/flexera.automation.selenium/test-results.xml'
+        path: '**/flexera.automation.selenium/test-results.xml'
     
