@@ -1,0 +1,18 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "flexera.automation.selenium", "flexera.automation.selenium\flexera.automation.selenium.csproj", "{1FA0CAEF-C542-40F3-BF99-273B4731EA38}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "flexera.automation.selenium", "flexera.automation.selenium", "{5F81886E-2CE2-4728-B22E-EEF146E1803C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1FA0CAEF-C542-40F3-BF99-273B4731EA38}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1FA0CAEF-C542-40F3-BF99-273B4731EA38}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1FA0CAEF-C542-40F3-BF99-273B4731EA38}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1FA0CAEF-C542-40F3-BF99-273B4731EA38}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
