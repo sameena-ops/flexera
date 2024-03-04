@@ -2,19 +2,20 @@
 using Flexera.Automation.Selenium.tests;
 using Flexera.Automation.Selenium.tests.pageActions;
 using Flexera.Automation.Selenium.tests.utilities;
-using NUnit.Framework.Legacy;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace flexera.automation.selenium;
 
 public class BusinessValueCalculatorTests: BaseTest,IClassFixture<BrowserFactory>
 {
     private readonly BusinessValueCalculatorPageHelper _businessValueCalculatorPageHelper = new();
-  
-    public BusinessValueCalculatorTests()
+    private readonly ITestOutputHelper output;
+    public BusinessValueCalculatorTests(ITestOutputHelper output)
     {
+        this.output = output;
         _businessValueCalculatorPageHelper = new BusinessValueCalculatorPageHelper();
     }
     
@@ -29,7 +30,7 @@ public class BusinessValueCalculatorTests: BaseTest,IClassFixture<BrowserFactory
         Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
         List<string> actualMenuItems = menuItems.Select(menu => menu.Text).ToList();
 
-        CollectionAssert.AreEqual(expectedMenuItems, actualMenuItems);
+        Assert.Equal(expectedMenuItems, actualMenuItems);
         return Task.CompletedTask;
     }
     
@@ -60,8 +61,8 @@ public class BusinessValueCalculatorTests: BaseTest,IClassFixture<BrowserFactory
         var actualCountriesList = countries.Options.Select(option => option.Text).ToList();
         var actualNoOfYearsList = noOfYearsDropDown.Options.Select(option => option.Text).ToList();
         
-        CollectionAssert.AreEqual(expectedCountriesList, actualCountriesList, "Countries list mismatch");
-        CollectionAssert.AreEqual(expectedNoOfYearsList, actualNoOfYearsList, "Number of Years list mismatch");
+        Assert.Equal(expectedCountriesList, actualCountriesList);
+        Assert.Equal(expectedNoOfYearsList, actualNoOfYearsList);
         return Task.CompletedTask;
     }
 
@@ -90,7 +91,7 @@ public class BusinessValueCalculatorTests: BaseTest,IClassFixture<BrowserFactory
         
         var actualValues = interests.Select(interest => interest.Text).ToList();
         
-        CollectionAssert.AreEqual(expectedInterestsList, actualValues);
+        Assert.Equal(expectedInterestsList, actualValues);
         return Task.CompletedTask;
     }
     
