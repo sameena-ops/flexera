@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using Flexera.Automation.Selenium.tests.utilities;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 
 namespace Flexera.Automation.Selenium.tests.pageActions;
@@ -25,12 +26,21 @@ public class BusinessValueCalculatorPageHelper
 
     public void SwitchToRoiFrame(IWebDriver driver)
     {
-        driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
-        IWebElement? roiCalculator = driver.FindElement(By.XPath("//*[@id=\"block-flexera-content\"]//p[3]/a"));
-        driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
-        roiCalculator?.Click();
-        driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
-        driver.SwitchTo().Frame("vroi");
+        try
+        {
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
+            driver.Manage().Window.Maximize();
+            IWebElement? roiCalculator = driver.FindElement(By.XPath("//*[@id=\"block-flexera-content\"]//p[3]/a"));
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
+            roiCalculator?.Click();
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
+            driver.SwitchTo().Frame("vroi");
+        }
+        catch (Exception e)
+        {
+           new Screenshots(driver).TakeScreenshot("SwitchToRoiFrame","SwitchToRoiFrame");
+            throw;
+        }
     }
     
 }

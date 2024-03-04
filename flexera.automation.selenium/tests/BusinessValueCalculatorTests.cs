@@ -12,10 +12,8 @@ namespace flexera.automation.selenium;
 public class BusinessValueCalculatorTests: BaseTest,IClassFixture<BrowserFactory>
 {
     private readonly BusinessValueCalculatorPageHelper _businessValueCalculatorPageHelper = new();
-    private readonly ITestOutputHelper output;
-    public BusinessValueCalculatorTests(ITestOutputHelper output)
+    public BusinessValueCalculatorTests()
     {
-        this.output = output;
         _businessValueCalculatorPageHelper = new BusinessValueCalculatorPageHelper();
     }
     
