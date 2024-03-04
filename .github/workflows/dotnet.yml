@@ -24,6 +24,8 @@ jobs:
       working-directory: ./flexera-automation/flexera.automation.selenium
       run: dotnet restore
     - name: Build
+      working-directory: ./flexera-automation/flexera.automation.selenium
       run: dotnet build --no-restore
     - name: Test
+      working-directory: ./flexera-automation/flexera.automation.selenium
       run: dotnet test --no-build --verbosity normal
