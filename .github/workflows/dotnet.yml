@@ -20,6 +20,12 @@ jobs:
       uses: actions/setup-dotnet@v3
       with:
         dotnet-version: 8.0.x
+    - name: Install ChromeDriver
+      run: |
+        CHROMEDRIVER_VERSION=$(curl -sS chromedriver.storage.googleapis.com/LATEST_RELEASE)
+        curl -sS -o chromedriver.zip https://chromedriver.storage.googleapis.com/${CHROMEDRIVER_VERSION}/chromedriver_linux64.zip
+        unzip chromedriver.zip -d /usr/local/bin
+        chmod +x /usr/local/bin/chromedriver
     - name: Restore dependencies
       working-directory: ./flexera.automation.selenium
       run: dotnet restore
